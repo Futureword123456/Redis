@@ -17,11 +17,11 @@ try:
         print(one.decode('utf-8'))
 
     """有序集合的创建"""
-    # con.zadd('keyword', {"马云","1.1"})
-    con.zadd("keyword", "马云", 0.2, "鹿晗", 2.3)
+
+    con.zadd("keyword", {"马云": 0.2, "鹿晗": 2.3, "马化腾": 2.6})
 
     """增加10分"""
-    con.zincrby("keyword", "10", "name1")
+    con.zincrby("keyword", "10", "马云")
     result = con.zrevrange("keyword", 0, -1)
     for i in result:
         print(i.decode('utf-8'))
