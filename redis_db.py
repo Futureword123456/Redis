@@ -19,7 +19,7 @@ except Exception as e:
 
 """创建链接"""
 try:
-    con = redis.StrictRedis(
+    con = redis.Redis(
         connection_pool=pool
     )
 except Exception as e:
